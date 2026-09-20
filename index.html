@@ -412,6 +412,23 @@
             color: #334155;
         }
 
+        .erp-stage-fallback button {
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .erp-stage-fallback button:focus-visible {
+            outline: 3px solid rgba(59, 130, 246, 0.3);
+            outline-offset: 4px;
+            border-radius: 8px;
+        }
+
         .erp-3d-caption {
             display: flex;
             align-items: center;
@@ -429,20 +446,484 @@
             font-weight: 600;
         }
 
+        /* Finance module drill-down */
+        .finance-detail-card {
+            padding: 26px 30px 22px;
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .finance-detail-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+
+        .finance-back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 14px;
+            border: 1px solid rgba(147, 197, 253, 0.65);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.58);
+            color: #1e40af;
+            font-family: 'Prompt', sans-serif;
+            font-size: 0.67rem;
+            font-weight: 600;
+            line-height: 1;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.09);
+            cursor: pointer;
+            transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+        }
+
+        .finance-back-button:hover,
+        .finance-back-button:focus-visible {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.15);
+            outline: 3px solid rgba(96, 165, 250, 0.28);
+            outline-offset: 2px;
+        }
+
+        .finance-back-button svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        .finance-title-block h3 {
+            margin: 0;
+            color: #172b91;
+            font-size: 2rem;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+        }
+
+        .finance-title-block p {
+            margin: 4px 0 0;
+            color: #334e9a;
+            font-size: 0.72rem;
+            line-height: 1.35;
+        }
+
+        .finance-detail-layout {
+            display: grid;
+            grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.65fr);
+            gap: 17px;
+            min-height: 485px;
+        }
+
+        .finance-story-rail {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .finance-info-panel {
+            padding: 15px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.92);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 12px 26px rgba(37, 99, 235, 0.08);
+        }
+
+        .finance-info-panel h4 {
+            margin: 0 0 10px;
+            color: #172b91;
+            font-size: 0.87rem;
+            line-height: 1.2;
+        }
+
+        .finance-workflow {
+            display: grid;
+            gap: 5px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .finance-workflow li {
+            position: relative;
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            align-items: center;
+            gap: 9px;
+            min-height: 34px;
+            margin: 0;
+            color: #1e3a8a;
+            font-size: 0.68rem;
+            line-height: 1.28;
+        }
+
+        .finance-workflow li:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 31px;
+            width: 2px;
+            height: 8px;
+            background: linear-gradient(#60a5fa, #93c5fd);
+        }
+
+        .finance-step-icon {
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: linear-gradient(145deg, #3b82f6, #2563eb);
+            color: white;
+            box-shadow: 0 7px 14px rgba(37, 99, 235, 0.22);
+        }
+
+        .finance-step-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .finance-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .finance-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            min-height: 46px;
+            margin: 0;
+            padding: 8px;
+            border-radius: 13px;
+            background: rgba(239, 246, 255, 0.78);
+            color: #334155;
+            font-size: 0.59rem;
+            line-height: 1.25;
+        }
+
+        .finance-benefit-icon {
+            flex: 0 0 auto;
+            width: 25px;
+            height: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+            background: rgba(59, 130, 246, 0.13);
+            color: #2563eb;
+        }
+
+        .finance-benefit-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .finance-selected-detail {
+            margin-top: auto;
+            min-height: 88px;
+        }
+
+        .finance-selected-detail span {
+            display: block;
+            margin-bottom: 4px;
+            color: #64748b;
+            font-size: 0.56rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .finance-selected-detail strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #1e40af;
+            font-size: 0.76rem;
+        }
+
+        .finance-selected-detail p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.59rem;
+            line-height: 1.35;
+        }
+
+        .finance-3d-figure {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .finance-3d-stage {
+            position: relative;
+            flex: 1;
+            min-height: 440px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.96);
+            border-radius: 28px;
+            background:
+                radial-gradient(circle at 49% 51%, rgba(59, 130, 246, 0.22), transparent 31%),
+                radial-gradient(circle at 83% 75%, rgba(196, 181, 253, 0.2), transparent 34%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(239, 246, 255, 0.33));
+            box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.62), 0 18px 38px rgba(59, 130, 246, 0.1);
+            isolation: isolate;
+            touch-action: none;
+        }
+
+        .finance-3d-stage::before {
+            content: '';
+            position: absolute;
+            inset: 15% 8%;
+            z-index: 0;
+            border: 1px solid rgba(99, 102, 241, 0.12);
+            border-radius: 50%;
+            transform: perspective(520px) rotateX(67deg);
+            pointer-events: none;
+        }
+
+        .finance-3d-stage canvas {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+            outline: none;
+        }
+
+        .finance-3d-stage canvas:active { cursor: grabbing; }
+
+        .finance-3d-labels {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 240ms ease;
+        }
+
+        .finance-3d-stage.is-ready .finance-3d-labels { opacity: 1; }
+
+        .finance-node-label {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            min-width: max-content;
+            padding: 6px 9px;
+            border: 1px solid rgba(255, 255, 255, 0.96);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.84);
+            color: #1e3a8a;
+            font-family: 'Prompt', sans-serif;
+            font-size: 0.58rem;
+            font-weight: 600;
+            line-height: 1;
+            box-shadow: 0 7px 17px rgba(30, 64, 175, 0.13);
+            transform: translate(-50%, -50%);
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .finance-node-label::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 3px;
+            background: var(--finance-node-color, #3b82f6);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--finance-node-color, #3b82f6) 16%, transparent);
+        }
+
+        .finance-node-label:hover,
+        .finance-node-label:focus-visible,
+        .finance-node-label[aria-pressed="true"] {
+            border-color: var(--finance-node-color, #3b82f6);
+            background: white;
+            color: #172554;
+            outline: none;
+            box-shadow: 0 9px 22px color-mix(in srgb, var(--finance-node-color, #3b82f6) 28%, transparent);
+        }
+
+        .finance-core-label {
+            position: absolute;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-family: 'Prompt', sans-serif;
+            line-height: 1;
+            text-shadow: 0 2px 10px rgba(30, 64, 175, 0.62);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 240ms ease;
+        }
+
+        .finance-3d-stage.is-ready .finance-core-label { opacity: 1; }
+        .finance-core-label strong { font-size: 0.82rem; }
+        .finance-core-label span { margin-top: 4px; font-size: 0.48rem; font-weight: 600; }
+
+        .finance-stage-fallback {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(248, 250, 252, 0.9);
+        }
+
+        .finance-3d-stage.is-ready .finance-stage-fallback { display: none; }
+
+        .finance-stage-fallback strong {
+            margin-bottom: 12px;
+            color: #1e3a8a;
+            font-size: 0.85rem;
+        }
+
+        .finance-fallback-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .finance-fallback-grid button {
+            padding: 10px;
+            border: 1px solid rgba(59, 130, 246, 0.18);
+            border-radius: 13px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #334155;
+            font-family: 'Prompt', sans-serif;
+            font-size: 0.62rem;
+            cursor: pointer;
+        }
+
+        .finance-fallback-grid b,
+        .finance-fallback-grid small {
+            display: block;
+        }
+
+        .finance-fallback-grid b {
+            margin-bottom: 3px;
+            color: #1e3a8a;
+        }
+
+        .finance-fallback-grid small {
+            color: #64748b;
+            font-size: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .finance-3d-caption {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 7px;
+            padding: 0 5px;
+            color: #64748b;
+            font-size: 0.58rem;
+        }
+
+        .finance-3d-caption strong { color: #1e40af; }
+
+        .erp-3d-stage.is-drilling .erp-module-label:not([aria-pressed="true"]),
+        .erp-3d-stage.is-drilling .erp-core-label {
+            opacity: 0.12;
+        }
+
+        .erp-3d-stage.is-drilling { pointer-events: none; }
+
         @media (max-width: 760px) {
             .erp-architecture-card { padding: 30px; }
             .erp-3d-layout { grid-template-columns: 0.75fr 1.45fr; gap: 16px; }
             .erp-deployment-card { padding: 16px; }
             .erp-3d-stage { min-height: 410px; }
+            .finance-detail-card { padding: 22px 24px 18px; }
+            .finance-detail-layout { grid-template-columns: 0.78fr 1.5fr; gap: 12px; }
+            .finance-title-block h3 { font-size: 1.68rem; }
+            .finance-3d-stage { min-height: 420px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
+            .reveal .slides section,
+            .reveal .slides section .fragment {
+                transition: none !important;
+                animation: none !important;
+            }
+
             .erp-3d-labels,
             .erp-core-label,
-            .erp-module-label {
+            .erp-module-label,
+            .finance-3d-labels,
+            .finance-core-label,
+            .finance-node-label,
+            .finance-back-button {
                 transition: none;
             }
         }
+
+        /* Finance is an independent modal room, never a Reveal slide. */
+        .finance-room-dialog { border:0; padding:0; width:100vw; max-width:100vw; height:100dvh; max-height:100dvh; margin:0; color:#18305e; background:linear-gradient(125deg,#edf5ff,#e6eefc 55%,#ede9fb); font-family:'Prompt',sans-serif; overflow:auto; }
+        .finance-room-dialog::backdrop { background:#c6d8f3; }
+        #fullscreen-btn { right:120px; }
+        .finance-room-dialog[data-state="exiting"] { opacity:0; transition:opacity .16s ease; }
+        .finance-room-shell { min-height:100%; padding:28px 30px 20px; box-sizing:border-box; }
+        .finance-room-header { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:0 10px 20px; }
+        .finance-breadcrumb { margin:0 0 5px; color:#546c96; font-size:13px; }
+        .finance-room-header h2 { margin:0; font-size:clamp(26px,2.9vw,44px); font-weight:700; line-height:1.25; color:#152c70; letter-spacing:-.035em; }
+        .finance-room-dialog .finance-back-button { padding:15px 20px; font-size:14px; line-height:1.3; border-radius:24px; flex-shrink:0; background:var(--active-module-color,#334f97); color:#fff; box-shadow:0 8px 24px #214e8c25; }
+        .finance-room-layout { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:24px; min-height:calc(100dvh - 133px); }
+        .finance-room-figure { margin:0; min-width:0; display:flex; flex-direction:column; }
+        .finance-room-stage { position:relative; flex:1; min-height:540px; overflow:hidden; touch-action:none; border-radius:28px; background:radial-gradient(ellipse at 45% 75%,#c1d5e966,transparent 70%); }
+        .finance-room-stage canvas { position:absolute; inset:0; width:100%; height:100%; cursor:grab; }
+        .finance-room-stage canvas:active { cursor:grabbing; }
+        .finance-room-stage.is-ready .finance-3d-labels { opacity:1; }
+        .finance-room-stage.is-ready .finance-room-fallback { display:none; }
+        .finance-room-dialog .finance-node-label { font-size:13px; padding:11px 13px; border-radius:14px; color:#1d356f; box-shadow:0 5px 22px #27529125; background:#f8fbffed; transition:background .18s,box-shadow .18s; }
+        .finance-node-label:focus-visible { outline:3px solid #2e6dde; outline-offset:3px; }
+        .finance-room-figure figcaption { padding:12px 0 0; color:#546c96; text-align:center; font-size:13px; }
+        .finance-room-inspector { align-self:stretch; padding:25px; border:1px solid #fff; border-radius:25px; background:#ffffffab; box-shadow:0 16px 44px #315f8d12; }
+        .finance-inspector-icon { display:grid; place-items:center; width:48px; height:48px; border-radius:16px; background:color-mix(in srgb,var(--active-module-color,#386bd5) 15%,white); color:var(--active-module-color,#386bd5); font-size:24px; font-weight:700; margin-bottom:14px; }
+        .finance-room-inspector h3 { margin:0 0 12px; color:#172f71; font-size:26px; font-weight:700; line-height:1.25; }
+        .finance-room-inspector p { font-size:15px; line-height:1.7; }
+        .finance-room-inspector h4 { margin:24px 0 12px; font-size:17px; font-weight:600; }
+        .finance-example { margin:20px 0; padding:12px 14px; background:#e1ecff; border-radius:13px; color:#214a97; font-weight:600; }
+        .finance-room-steps { list-style:none; padding:0; margin:0; counter-reset:finance-step; }
+        .finance-room-steps li { position:relative; display:flex; align-items:center; gap:12px; min-height:42px; margin-bottom:8px; font-size:15px; line-height:1.45; }
+        .finance-room-steps li::before { counter-increment:finance-step; content:counter(finance-step); display:grid; place-items:center; flex:0 0 28px; height:28px; border-radius:50%; background:var(--active-module-color,#466fe0); color:#fff; font-size:14px; z-index:1; }
+        .finance-room-steps li:not(:last-child)::after { content:''; position:absolute; left:13px; top:31px; width:2px; height:31px; background:#b6c9f3; }
+        .finance-room-benefits { list-style:none; margin:0; padding:0; }
+        .finance-room-benefits li { display:flex; gap:10px; margin:12px 0; font-size:14px; line-height:1.5; }
+        .finance-room-benefits li::before { content:'✓'; color:#fff; background:#43b6a8; border-radius:50%; width:22px; height:22px; text-align:center; flex-shrink:0; }
+        .finance-room-inspector .finance-inspector-note { margin:24px 0 0; font-size:11px; color:#697f9f; }
+        .finance-room-fallback { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:30px; }
+        .finance-floor-plan { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:120px; border:2px solid #a6bfeb; border-radius:20px 20px 6px 6px; background:#e1ecfa; gap:10px; }
+        .finance-room-fallback p { text-align:center; margin:16px 0; }
+        .finance-room-dialog .finance-fallback-grid button { font-size:15px; min-height:65px; border-left:4px solid var(--finance-node-color,#3b82f6); }
+        .finance-sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+        body.finance-view-active .reveal .controls, body.finance-view-active .reveal .progress { visibility:hidden; }
+        @media(max-width:1000px) { .finance-room-layout { grid-template-columns:minmax(0,1fr) 290px; gap:10px; } .finance-room-shell { padding:20px 16px; } .finance-room-inspector { padding:20px; } }
+        @media(max-width:700px) {
+            .finance-room-shell { padding:0 12px 20px; }
+            .finance-room-header { position:sticky; top:0; z-index:10; padding:14px 0; background:#eaf1fcf5; gap:8px; }
+            .finance-room-header h2 { font-size:22px; }
+            .finance-breadcrumb { font-size:10px; }
+            .finance-room-dialog .finance-back-button { font-size:11px; padding:11px; max-width:145px; }
+            .finance-room-layout { display:flex; flex-direction:column; min-height:0; gap:20px; }
+            .finance-room-stage { height:390px; min-height:390px; flex:none; }
+            .finance-room-dialog .finance-node-label { font-size:10px; padding:9px 7px; gap:5px; }
+            .finance-room-inspector { padding:24px; }
+        }
+
     </style>
 </head>
 <body>
@@ -629,12 +1110,12 @@
                                 <div class="erp-stage-fallback">
                                     <strong>Single Database เชื่อมข้อมูลทุกฝ่าย</strong>
                                     <ul>
-                                        <li><b>การเงิน &amp; บัญชี</b><br>รายการและงบการเงิน</li>
-                                        <li><b>จัดซื้อ</b><br>ใบสั่งซื้อและซัพพลายเออร์</li>
-                                        <li><b>คลังสินค้า</b><br>ยอดคงเหลือแบบ Real-time</li>
-                                        <li><b>การผลิต</b><br>วางแผนวัตถุดิบและการผลิต</li>
-                                        <li><b>การขาย</b><br>คำสั่งซื้อ ใบแจ้งหนี้ และรายได้</li>
-                                        <li><b>บุคลากร (HR)</b><br>พนักงานและเงินเดือน</li>
+                                        <li><button type="button" data-module-open="finance"><b>การเงิน &amp; บัญชี</b><br>เปิดรายละเอียดโมดูล</button></li>
+                                        <li><button type="button" data-module-open="procurement"><b>จัดซื้อ</b><br>ใบสั่งซื้อและซัพพลายเออร์</button></li>
+                                        <li><button type="button" data-module-open="inventory"><b>คลังสินค้า</b><br>ยอดคงเหลือแบบ Real-time</button></li>
+                                        <li><button type="button" data-module-open="production"><b>การผลิต</b><br>วางแผนวัตถุดิบและการผลิต</button></li>
+                                        <li><button type="button" data-module-open="sales"><b>การขาย</b><br>คำสั่งซื้อ ใบแจ้งหนี้ และรายได้</button></li>
+                                        <li><button type="button" data-module-open="hr"><b>บุคลากร (HR)</b><br>พนักงานและเงินเดือน</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -692,7 +1173,7 @@
                 </div>
             </section>
 
-            <!-- Slide 6: Pain Points -->
+            <!-- Slide 7: Pain Points -->
             <section data-transition="convex">
                 <div class="glass-card text-left">
                     <h3 class="text-3xl mb-8 text-red-600 flex items-center gap-3 font-extrabold">
@@ -842,6 +1323,46 @@
         </div>
     </div>
 
+
+    <dialog id="finance-detail-view" class="finance-room-dialog" aria-labelledby="finance-room-title">
+        <div class="finance-room-shell">
+            <header class="finance-room-header">
+                <div><p id="module-room-breadcrumb" class="finance-breadcrumb">รูปแบบ ERP / การเงิน &amp; บัญชี</p>
+                    <h2 id="finance-room-title">ห้องการเงิน &amp; บัญชี</h2>
+                </div>
+                <button id="finance-back-button" class="finance-back-button" type="button">
+                    <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7M8 12h12"/></svg>
+                    กลับสู่แผนผัง ERP
+                </button>
+            </header>
+            <div class="finance-room-layout">
+                <figure class="finance-room-figure">
+                    <div id="finance-3d-stage" class="finance-room-stage" aria-label="ห้องโมดูล ERP สามมิติ ลากเพื่อสำรวจ หรือใช้ปุ่มชื่อจุดทำงานเพื่อดูรายละเอียด">
+                        <div id="finance-3d-labels" class="finance-3d-labels" role="group" aria-label="จุดทำงานในโมดูล"></div>
+                        <div id="finance-room-fallback" class="finance-room-fallback">
+                            <div class="finance-floor-plan" aria-hidden="true"><span id="module-fallback-title">ห้องการเงิน &amp; บัญชี</span><span id="module-fallback-subtitle">บัญชีกลาง · General Ledger</span></div>
+                            <p>เลือกจุดทำงานเพื่อดูหน้าที่และตัวอย่าง</p>
+                            <div class="finance-fallback-grid"></div>
+                        </div>
+                    </div>
+                    <figcaption>ลากเพื่อสำรวจ • คลิกจุดเพื่อดูหน้าที่</figcaption>
+                </figure>
+                <aside class="finance-room-inspector" aria-label="รายละเอียดจุดทำงาน">
+                    <div id="module-inspector-icon" class="finance-inspector-icon" aria-hidden="true">฿</div>
+                    <h3 id="finance-selected-name">Cash &amp; Bank</h3>
+                    <p id="finance-selected-description"></p>
+                    <p class="finance-example" id="finance-example"></p>
+                    <h4>ขั้นตอนการทำงาน</h4>
+                    <ol id="finance-steps" class="finance-room-steps"></ol>
+                    <h4>ประโยชน์ที่ได้รับ</h4>
+                    <ul id="finance-benefits" class="finance-room-benefits"></ul>
+                    <p class="finance-inspector-note">ข้อมูลตัวอย่างเพื่ออธิบายการทำงานของ ERP</p>
+                    <span id="finance-announcement" class="finance-sr-only" aria-live="polite"></span>
+                </aside>
+            </div>
+        </div>
+    </dialog>
+
     <script type="importmap">
         {
             "imports": {
@@ -858,6 +1379,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     
     <script>
+        // Remove the former child-slide hash without inserting a slide into the deck.
+        if (location.hash === '#/finance-detail-slide') history.replaceState(null, '', '#/erp-architecture-slide');
         // Initialize Reveal.js
         Reveal.initialize({
             hash: true,
@@ -896,6 +1419,90 @@
                 fsBtn.innerHTML = '<svg class="w-6 h-6 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>';
             }
         });
+
+
+        // Module details remain usable when WebGL or the Three.js CDN is unavailable.
+        (() => {
+            const p=(id,name,kind,color,position,description,example,steps,benefits)=>({id,name,kind,color,position,description,example,steps,benefits});
+            const modules={
+                finance:{id:'finance',name:'การเงิน & บัญชี',roomTitle:'ห้องการเงิน & บัญชี',icon:'฿',color:'#3b82f6',subtitle:'บัญชีกลาง · General Ledger',theme:{floor:'#b9cad5',wall:'#dde5ec',accent:'#497fdf'},stations:[
+                    p('cash','Cash & Bank','vault','#497fdf',[-3.5,0,-2.3],'ติดตามเงินสดและบัญชีธนาคาร เชื่อมรายการรับ–จ่ายกับบัญชีกลาง','ตัวอย่าง: รับชำระ ฿120,000',['รับชำระ','ปิดลูกหนี้','เงินสดเพิ่ม','ลงบัญชี'],['ลดการคีย์ซ้ำ','ตรวจสอบย้อนหลังได้','เห็นข้อมูล Real-time']),
+                    p('ar','ลูกหนี้ (AR)','desk','#20a892',[-2.5,0,1.4],'ออกใบแจ้งหนี้ ติดตามยอดค้างรับ และบันทึกการรับชำระจากลูกค้า','ตัวอย่าง: ใบแจ้งหนี้ INV-2026-001',['ออกใบแจ้งหนี้','ติดตามวันครบกำหนด','จับคู่ยอดชำระ','ปิดยอดค้างรับ'],['เห็นยอดค้างรับชัดเจน','ติดตามหนี้ตรงเวลา','เชื่อมการขายกับบัญชี']),
+                    p('ap','เจ้าหนี้ (AP)','trays','#cf8d36',[.2,0,-.7],'ตรวจสอบใบวางบิลกับข้อมูลจัดซื้อ จัดกำหนดชำระ และบันทึกรายจ่าย','ตัวอย่าง: ชำระค่าวัตถุดิบ ฿45,000',['รับใบวางบิล','ตรวจเอกสารจัดซื้อ','อนุมัติและชำระ','บันทึกเจ้าหนี้'],['ลดการจ่ายซ้ำ','วางแผนเงินสด','ติดตามเอกสารได้']),
+                    p('payroll','Payroll Approval','approval','#ba668c',[2.6,0,1.7],'ตรวจสอบยอดเงินเดือนจาก HR และอนุมัติก่อนส่งต่อการจ่าย','ตัวอย่าง: อนุมัติเงินเดือนประจำเดือน',['รับยอดจาก HR','ตรวจสอบรายการ','อนุมัติเงินเดือน','ส่งจ่ายและลงบัญชี'],['แยกหน้าที่ตรวจสอบ','ลดข้อมูลซ้ำกับ HR','ตรวจสอบการอนุมัติได้']),
+                    p('coa','Chart of Accounts','shelves','#8470bf',[2.4,0,-3.1],'กำหนดรหัสและหมวดบัญชี เพื่อให้ทุกฝ่ายใช้มาตรฐานเดียวกัน','ตัวอย่าง: จัดรายรับเข้าหมวดรายได้',['กำหนดรหัสบัญชี','จัดหมวดรายการ','รวมบัญชีแยกประเภท','สรุปรายงาน'],['หมวดหมู่สม่ำเสมอ','ค้นหารายการง่าย','ปิดบัญชีเร็วขึ้น'])]},
+                procurement:{id:'procurement',name:'จัดซื้อ',roomTitle:'ศูนย์ปฏิบัติการจัดซื้อ',icon:'PO',color:'#a855f7',subtitle:'Source-to-Pay · ควบคุมต้นทุนผู้ขาย',theme:{floor:'#c8bfd8',wall:'#eee8f5',accent:'#a855f7'},stations:[
+                    p('pr','Purchase Request','request','#8b5cf6',[-3.5,0,-2.3],'รวบรวมคำขอซื้อจากหน่วยงานและตรวจงบประมาณก่อนเริ่มจัดหา','ตัวอย่าง: PR-2026-014 ขอซื้อวัตถุดิบ 500 หน่วย',['สร้างคำขอซื้อ','ตรวจงบประมาณ','อนุมัติคำขอ','ส่งให้ผู้จัดซื้อ'],['ลดคำขอนอกระบบ','เห็นความต้องการรวม','ควบคุมงบประมาณ']),
+                    p('rfq','RFQ Comparison','comparison','#c084fc',[-2.5,0,1.4],'เปรียบเทียบราคา เงื่อนไข และระยะส่งมอบจากผู้ขายหลายราย','ตัวอย่าง: เปรียบเทียบใบเสนอราคา 3 ผู้ขาย',['ส่ง RFQ','รับใบเสนอราคา','ให้คะแนนผู้ขาย','เลือกข้อเสนอ'],['ตัดสินใจโปร่งใส','ลดต้นทุนจัดซื้อ','มีหลักฐานการคัดเลือก']),
+                    p('vendor','Vendor Registry','vendor','#7c3aed',[.2,0,-.7],'เก็บข้อมูลผู้ขาย เอกสารรับรอง ผลงาน และสถานะความเสี่ยง','ตัวอย่าง: ต่ออายุเอกสารผู้ขาย SUP-018',['ลงทะเบียนผู้ขาย','ตรวจเอกสาร','ประเมินความเสี่ยง','เปิดใช้งาน'],['ข้อมูลผู้ขายเป็นระบบ','ลดความเสี่ยง','ประเมินผลงานได้']),
+                    p('po','PO Approval','approval','#d946ef',[2.6,0,1.7],'สร้างและอนุมัติใบสั่งซื้อตามวงเงินและลำดับอำนาจ','ตัวอย่าง: PO-2026-089 มูลค่า ฿350,000',['สร้าง PO','ตรวจเงื่อนไข','อนุมัติตามวงเงิน','ส่งให้ผู้ขาย'],['ลดการซื้อผิดเงื่อนไข','ติดตามอนุมัติได้','เชื่อมงบประมาณ']),
+                    p('receiving','Receiving / AP','dock','#9333ea',[2.4,0,-3.1],'ส่งข้อมูล PO ให้คลังรับสินค้าและบัญชีตรวจสามทางก่อนจ่าย','ตัวอย่าง: จับคู่ PO + GRN + Invoice',['รับสินค้า','บันทึก GRN','ตรวจสามทาง','ส่งเจ้าหนี้'],['ลดจ่ายผิดรายการ','เชื่อมคลังกับบัญชี','ตรวจสอบย้อนหลังได้'])]},
+                inventory:{id:'inventory',name:'คลังสินค้า',roomTitle:'คลังสินค้าอัจฉริยะ',icon:'▦',color:'#f59e0b',subtitle:'Warehouse Control · Stock Real-time',theme:{floor:'#c8c5ba',wall:'#ece9df',accent:'#f59e0b'},stations:[
+                    p('receiving','Receiving Dock','dock','#f59e0b',[-3.5,0,-2.3],'รับสินค้า ตรวจจำนวนและคุณภาพก่อนเพิ่มยอดคงเหลือ','ตัวอย่าง: GRN-2026-042 รับวัตถุดิบ 500 หน่วย',['สแกน PO','ตรวจสินค้า','บันทึก GRN','จัดเข้าพื้นที่'],['รับสินค้าเร็วขึ้น','ลดจำนวนผิด','อัปเดตสต็อกทันที']),
+                    p('storage','Storage Racks','racks','#d97706',[-2.5,0,1.4],'กำหนดตำแหน่งจัดเก็บและมองเห็นความจุแต่ละพื้นที่','ตัวอย่าง: จัดเก็บ Lot A26 ที่ Rack B-12',['แนะนำตำแหน่ง','ย้ายเข้าชั้น','ยืนยันตำแหน่ง','อัปเดตความจุ'],['หาสินค้าเร็ว','ใช้พื้นที่คุ้มค่า','ลดของสูญหาย']),
+                    p('tracking','Barcode / Lot','scanner','#fbbf24',[.2,0,-.7],'ติดตาม Barcode, Serial และ Lot ตั้งแต่รับเข้าจนส่งออก','ตัวอย่าง: ตรวจย้อนกลับ Lot A26 ภายในไม่กี่วินาที',['สร้างรหัส','ติดฉลาก','สแกนเคลื่อนไหว','ตรวจย้อนกลับ'],['Traceability ครบ','ลดคีย์ผิด','รองรับวันหมดอายุ']),
+                    p('picking','Picking & Issue','cart','#ea580c',[2.6,0,1.7],'จัดลำดับหยิบสินค้าและตัดสต็อกตามคำสั่งขายหรือใบเบิก','ตัวอย่าง: Pick List PK-2026-118',['รับรายการหยิบ','จัดเส้นทาง','สแกนยืนยัน','ตัดสต็อก'],['หยิบเร็วขึ้น','ลดส่งผิด','ยอดคงเหลือแม่นยำ']),
+                    p('reorder','Reorder Control','dashboard','#b45309',[2.4,0,-3.1],'แจ้งเตือนจุดสั่งซื้อจากยอดคงเหลือและอัตราการใช้จริง','ตัวอย่าง: สินค้า M-204 ต่ำกว่า Safety Stock',['ติดตามยอด','คำนวณจุดสั่งซื้อ','แจ้งเตือน','สร้างคำขอซื้อ'],['ลดของขาด','ลดของค้าง','เชื่อมจัดซื้ออัตโนมัติ'])]},
+                production:{id:'production',name:'การผลิต',roomTitle:'โรงงานดิจิทัล',icon:'⚙',color:'#10b981',subtitle:'Plan-to-Produce · คุมงานและต้นทุน',theme:{floor:'#aebfba',wall:'#e0eee9',accent:'#10b981'},stations:[
+                    p('bom','Bill of Materials','bom','#059669',[-3.5,0,-2.3],'กำหนดสูตรวัตถุดิบและรุ่นสินค้าที่ใช้ในการผลิต','ตัวอย่าง: BOM-FG100 ใช้วัตถุดิบ 4 รายการ',['เลือกสินค้า','กำหนดสูตร','ควบคุมเวอร์ชัน','อนุมัติ BOM'],['สูตรมาตรฐาน','คำนวณต้นทุนได้','ลดใช้วัตถุดิบผิด']),
+                    p('mrp','MRP Planning','dashboard','#34d399',[-2.5,0,1.4],'คำนวณวัตถุดิบและกำลังผลิตจากคำสั่งขายกับสต็อกล่าสุด','ตัวอย่าง: วางแผนผลิต FG100 จำนวน 1,000 ชิ้น',['รับ Demand','หักสต็อกคงเหลือ','คำนวณ Net Requirement','เสนอแผนผลิต/ซื้อ'],['ลดของขาด','วางแผนแม่นยำ','เชื่อมขายและคลัง']),
+                    p('material','Material Issue','conveyor','#0d9488',[.2,0,-.7],'เบิกวัตถุดิบตามใบสั่งผลิตและบันทึกการใช้จริง','ตัวอย่าง: เบิก Lot RM-A26 เข้า WO-0098',['ปล่อย Work Order','จองวัตถุดิบ','สแกนเบิก','บันทึกใช้จริง'],['ควบคุม Lot','เห็นต้นทุนจริง','ลดการเบิกเกิน']),
+                    p('workcenter','Work Center','machine','#16a34a',[2.6,0,1.7],'ติดตามสถานะเครื่องจักร งานระหว่างผลิต และเวลาทำงาน','ตัวอย่าง: Line 2 ผลิตแล้ว 720/1,000 ชิ้น',['เริ่มงาน','บันทึกผลผลิต','แจ้ง Downtime','ปิดงาน'],['เห็น WIP Real-time','ลดเวลาหยุด','วัดประสิทธิภาพได้']),
+                    p('quality','Quality Control','quality','#6ee7b7',[2.4,0,-3.1],'ตรวจคุณภาพก่อนรับสินค้าสำเร็จรูปเข้าคลัง','ตัวอย่าง: QC ผ่าน 995 ชิ้น ไม่ผ่าน 5 ชิ้น',['สุ่มตรวจ','บันทึกผล','แยกของเสีย','รับเข้าคลัง'],['คุณภาพสม่ำเสมอ','ติดตามของเสีย','ป้องกันสินค้าผิดมาตรฐาน'])]},
+                sales:{id:'sales',name:'การขาย',roomTitle:'ศูนย์บัญชาการฝ่ายขาย',icon:'↗',color:'#f43f5e',subtitle:'Lead-to-Cash · จากโอกาสสู่รายได้',theme:{floor:'#d2bdc2',wall:'#f5e7eb',accent:'#f43f5e'},stations:[
+                    p('crm','Customer / CRM','crm','#e11d48',[-3.5,0,-2.3],'รวมประวัติลูกค้า ผู้ติดต่อ โอกาสขาย และกิจกรรมติดตาม','ตัวอย่าง: ลูกค้า C-108 สนใจแพ็กเกจ Enterprise',['บันทึกลูกค้า','สร้างโอกาสขาย','ติดตามกิจกรรม','ประเมินโอกาส'],['เห็นลูกค้า 360°','ไม่พลาดการติดตาม','พยากรณ์ยอดขายได้']),
+                    p('quotation','Quotation','quote','#fb7185',[-2.5,0,1.4],'สร้างใบเสนอราคาจากราคา ส่วนลด และเงื่อนไขที่อนุมัติแล้ว','ตัวอย่าง: QT-2026-055 มูลค่า ฿240,000',['เลือกสินค้า','คำนวณราคา','อนุมัติส่วนลด','ส่งใบเสนอราคา'],['ราคาเป็นมาตรฐาน','อนุมัติเร็ว','ลดข้อผิดพลาด']),
+                    p('order','Sales Order','order','#be123c',[.2,0,-.7],'แปลงใบเสนอราคาเป็นคำสั่งขายและตรวจเครดิตกับสต็อก','ตัวอย่าง: SO-2026-020 จำนวน 120 หน่วย',['ยืนยันคำสั่งซื้อ','ตรวจเครดิต','จองสต็อก','ยืนยันวันส่ง'],['ลดคีย์ซ้ำ','สัญญาส่งมอบชัดเจน','เชื่อมคลังทันที']),
+                    p('delivery','Delivery','truck','#f97316',[2.6,0,1.7],'จัดสินค้า ออกเอกสารส่งของ และติดตามสถานะจัดส่ง','ตัวอย่าง: DN-2026-031 ส่งครบ 120 หน่วย',['สร้าง Pick List','แพ็กสินค้า','ออก Delivery Note','ยืนยันส่งมอบ'],['ลดส่งผิด','ติดตามสถานะได้','ตัดสต็อก Real-time']),
+                    p('invoice','Invoice / Revenue','invoice','#db2777',[2.4,0,-3.1],'ออกใบแจ้งหนี้และบันทึกรายได้เข้าสู่บัญชีอัตโนมัติ','ตัวอย่าง: INV-2026-087 ยอด ฿240,000',['ยืนยันส่งมอบ','ออกใบแจ้งหนี้','บันทึกรายได้','ติดตามรับชำระ'],['รายได้ตรงเวลา','เชื่อมลูกหนี้','ปิดยอดขายเร็ว'])]},
+                hr:{id:'hr',name:'บุคลากร (HR)',roomTitle:'ศูนย์ประสบการณ์พนักงาน',icon:'◎',color:'#6366f1',subtitle:'Hire-to-Retire · ข้อมูลคนเป็นหนึ่งเดียว',theme:{floor:'#bdc4d8',wall:'#e8eaf7',accent:'#6366f1'},stations:[
+                    p('records','Employee Records','records','#4f46e5',[-3.5,0,-2.3],'เก็บประวัติ ตำแหน่ง สัญญา และโครงสร้างองค์กรของพนักงาน','ตัวอย่าง: อัปเดตตำแหน่งพนักงาน EMP-1042',['สร้างประวัติ','กำหนดตำแหน่ง','แนบเอกสาร','อนุมัติการเปลี่ยนแปลง'],['ข้อมูลกลางชุดเดียว','ลดเอกสารซ้ำ','ตรวจสอบย้อนหลังได้']),
+                    p('time','Time Attendance','kiosk','#818cf8',[-2.5,0,1.4],'รวบรวมเวลาเข้าออก กะงาน และ OT เพื่อคำนวณสิทธิอย่างถูกต้อง','ตัวอย่าง: สรุปเวลาและ OT ประจำเดือน',['รับข้อมูลเวลา','ตรวจความผิดปกติ','อนุมัติ OT','ส่งผลเงินเดือน'],['ลดคีย์เวลา','คำนวณแม่นยำ','เห็นกำลังคน']),
+                    p('benefits','Leave & Benefits','benefits','#7c3aed',[.2,0,-.7],'จัดการคำขอลา สิทธิ สวัสดิการ และการอนุมัติแบบ Self-service','ตัวอย่าง: ลาพักร้อน 3 วันผ่านระบบ',['ตรวจสิทธิ','ส่งคำขอ','หัวหน้าอนุมัติ','ปรับยอดคงเหลือ'],['พนักงานบริการตนเอง','ลดงานเอกสาร','เห็นสิทธิคงเหลือ']),
+                    p('payroll','Payroll Handoff','approval','#a78bfa',[2.6,0,1.7],'รวมเวลา ค่าตอบแทน และรายการหักก่อนส่งให้ Finance อนุมัติจ่าย','ตัวอย่าง: Payroll เดือนกันยายน 2569',['รวบรวมรายได้','คำนวณรายการหัก','ตรวจยอดสุทธิ','ส่ง Finance'],['ลดข้อมูลซ้ำ','จ่ายตรงเวลา','เชื่อมบัญชีอัตโนมัติ']),
+                    p('learning','Onboarding / Training','training','#4338ca',[2.4,0,-3.1],'วางแผนเริ่มงาน หลักสูตร และติดตามทักษะของพนักงาน','ตัวอย่าง: Onboarding พนักงานใหม่ 8 คน',['กำหนด Checklist','มอบหมายหลักสูตร','ติดตามความคืบหน้า','ประเมินผล'],['เริ่มงานเร็วขึ้น','ทักษะตรงบทบาท','เห็นช่องว่างการเรียนรู้'])]}
+            };
+            const dialog=document.getElementById('finance-detail-view'),back=document.getElementById('finance-back-button');
+            let state='closed',previousFocus=null,savedConfig=null,exitTimer=null,current=modules.finance;
+            const select=(id,announce=true)=>{
+                const part=current.stations.find(item=>item.id===id)||current.stations[0];
+                document.getElementById('finance-selected-name').textContent=part.name;
+                document.getElementById('finance-selected-description').textContent=part.description;
+                document.getElementById('finance-example').textContent=part.example;
+                for(const [element,items] of [['finance-steps',part.steps],['finance-benefits',part.benefits]])document.getElementById(element).replaceChildren(...items.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
+                dialog.querySelectorAll('[data-finance-part]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.financePart===part.id)));
+                if(announce)document.getElementById('finance-announcement').textContent=part.name+': '+part.description;
+                dialog.dispatchEvent(new CustomEvent('module-select',{detail:part.id}));
+            };
+            const renderModule=()=>{
+                document.getElementById('module-room-breadcrumb').textContent='รูปแบบ ERP / '+current.name;
+                document.getElementById('finance-room-title').textContent=current.roomTitle;
+                document.getElementById('module-inspector-icon').textContent=current.icon;
+                document.getElementById('module-fallback-title').textContent=current.roomTitle;
+                document.getElementById('module-fallback-subtitle').textContent=current.subtitle;
+                dialog.style.setProperty('--active-module-color',current.color);
+                const grid=dialog.querySelector('.finance-fallback-grid');grid.replaceChildren();
+                current.stations.forEach(part=>{const button=document.createElement('button');button.type='button';button.dataset.financePart=part.id;button.style.setProperty('--finance-node-color',part.color);button.textContent=part.name;button.addEventListener('click',()=>select(part.id));grid.append(button);});
+                select(current.stations[0].id,false);
+            };
+            const setState=next=>{state=next;dialog.dataset.state=next;};
+            const begin=moduleId=>{
+                if(state!=='closed'||!modules[moduleId])return false;
+                current=modules[moduleId];renderModule();previousFocus=document.activeElement;
+                const config=Reveal.getConfig();savedConfig=Object.fromEntries(['keyboard','mouseWheel','touch','controls','progress'].map(key=>[key,config[key]]));
+                Reveal.configure({keyboard:false,mouseWheel:false,touch:false,controls:false,progress:false});document.body.classList.add('finance-view-active');setState('entering');return true;
+            };
+            const show=()=>{if(state!=='entering')return;dialog.showModal();setState('open');dialog.dispatchEvent(new Event('module-open'));back.focus({preventScroll:true});};
+            const close=(immediate=false)=>{if(state==='closed'||state==='exiting')return;setState('exiting');dialog.dispatchEvent(new Event('module-exit'));const finish=()=>{if(dialog.open)dialog.close();if(savedConfig)Reveal.configure(savedConfig);document.body.classList.remove('finance-view-active');setState('closed');dialog.dispatchEvent(new Event('module-closed'));if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});};clearTimeout(exitTimer);exitTimer=setTimeout(finish,immediate||matchMedia('(prefers-reduced-motion: reduce)').matches?0:160);};
+            window.erpModuleView={modules,select,begin,show,close,get state(){return state;},get current(){return current;}};
+            window.erpFinanceView=window.erpModuleView;
+            renderModule();setState('closed');back.addEventListener('click',()=>close());
+            dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
+            dialog.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();close();}event.stopPropagation();});
+            document.addEventListener('keydown',event=>{if(state==='entering'&&event.key==='Escape'){event.preventDefault();close(true);}},true);
+            document.querySelectorAll('[data-module-open]').forEach(button=>button.addEventListener('click',()=>{if(begin(button.dataset.moduleOpen))show();}));
+            Reveal.on('slidechanged',()=>{if(state!=='closed')close(true);});
+        })();
     </script>
 
     <script type="module">
@@ -909,51 +1516,66 @@
                 name: 'การเงิน & บัญชี',
                 color: '#3b82f6',
                 position: [-4.05, 0, 1.55],
-                description: 'บันทึกรายการ กระทบยอด และปิดบัญชีจากข้อมูลทุกฝ่าย'
+                description: 'บันทึกรายการ กระทบยอด และปิดบัญชีจากข้อมูลทุกฝ่าย',
+                detailViewId: 'finance-detail-view',
+                sceneId: 'finance'
             },
             {
                 id: 'procurement',
                 name: 'จัดซื้อ',
                 color: '#a855f7',
                 position: [-1.65, 0, -3.25],
-                description: 'จัดการใบสั่งซื้อ ผู้ขาย และต้นทุนการจัดซื้อให้เชื่อมกับบัญชี'
+                description: 'จัดการใบสั่งซื้อ ผู้ขาย และต้นทุนการจัดซื้อให้เชื่อมกับบัญชี',
+                detailViewId: 'finance-detail-view', sceneId: 'procurement'
             },
             {
                 id: 'inventory',
                 name: 'คลังสินค้า',
                 color: '#f59e0b',
                 position: [3.85, 0, -1.65],
-                description: 'ติดตามยอดคงเหลือ รับ–จ่ายสินค้า และต้นทุนคงคลังแบบ Real-time'
+                description: 'ติดตามยอดคงเหลือ รับ–จ่ายสินค้า และต้นทุนคงคลังแบบ Real-time',
+                detailViewId: 'finance-detail-view', sceneId: 'inventory'
             },
             {
                 id: 'hr',
                 name: 'บุคลากร (HR)',
                 color: '#6366f1',
                 position: [4.05, 0, 1.65],
-                description: 'รวมข้อมูลพนักงาน เวลาทำงาน สวัสดิการ และเงินเดือนในฐานข้อมูลเดียว'
+                description: 'รวมข้อมูลพนักงาน เวลาทำงาน สวัสดิการ และเงินเดือนในฐานข้อมูลเดียว',
+                detailViewId: 'finance-detail-view', sceneId: 'hr'
             },
             {
                 id: 'sales',
                 name: 'การขาย',
                 color: '#f43f5e',
                 position: [1.55, 0, 3.3],
-                description: 'เชื่อมคำสั่งซื้อ ใบแจ้งหนี้ รายได้ และสต็อกเข้ากับข้อมูลส่วนกลาง'
+                description: 'เชื่อมคำสั่งซื้อ ใบแจ้งหนี้ รายได้ และสต็อกเข้ากับข้อมูลส่วนกลาง',
+                detailViewId: 'finance-detail-view', sceneId: 'sales'
             },
             {
                 id: 'production',
                 name: 'การผลิต',
                 color: '#10b981',
                 position: [-3.75, 0, -1.55],
-                description: 'วางแผนวัตถุดิบ กำลังการผลิต และต้นทุนโดยใช้ยอดคงคลังล่าสุด'
+                description: 'วางแผนวัตถุดิบ กำลังการผลิต และต้นทุนโดยใช้ยอดคงคลังล่าสุด',
+                detailViewId: 'finance-detail-view', sceneId: 'production'
             }
         ];
 
+        const getModulePartData = () => window.erpModuleView.current.stations;
         const stage = document.getElementById('erp-3d-stage');
         const architectureSlide = document.getElementById('erp-architecture-slide');
         const labelsLayer = document.getElementById('erp-3d-labels');
         const coreLabel = document.getElementById('erp-core-label');
         const selectedName = document.getElementById('erp-selected-name');
         const selectedDescription = document.getElementById('erp-selected-description');
+        const financeSlide = document.getElementById('finance-detail-view');
+        const financeStage = document.getElementById('finance-3d-stage');
+        const financeLabelsLayer = document.getElementById('finance-3d-labels');
+        const financeCoreLabel = document.getElementById('finance-core-label');
+        const financeSelectedName = document.getElementById('finance-selected-name');
+        const financeSelectedDescription = document.getElementById('finance-selected-description');
+        const financeBackButton = document.getElementById('finance-back-button');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
         let sceneState = null;
@@ -961,7 +1583,17 @@
         let active = false;
         let selectedId = 'finance';
         let hoveredId = null;
+        let drilldownLocked = false;
+        let drilldownAnimation = null;
+        let financeSceneState = null;
+        let financeFrameId = null;
+        let financeActive = false;
+        let selectedFinancePartId = 'cash';
+        let hoveredFinancePartId = null;
 
+        function applyMotionPreference() {
+            if(reducedMotion.matches && drilldownAnimation) { drilldownAnimation=null; window.erpModuleView.show(); }
+        }
         function selectModule(moduleId, announce = true) {
             const selected = moduleData.find((module) => module.id === moduleId);
             if (!selected) return;
@@ -989,6 +1621,58 @@
             }
         }
 
+
+        let savedArchitecture = null;
+        let entryPortal = null;
+        function resetArchitectureCamera() {
+            drilldownAnimation=null; drilldownLocked=false; stage.classList.remove('is-drilling');
+            if(!sceneState) return;
+            if(entryPortal){sceneState.scene.remove(entryPortal);entryPortal.traverse(object=>{
+                object.geometry?.dispose(); object.material?.dispose();
+            });entryPortal=null;}
+            if(savedArchitecture){
+                sceneState.controls.enableDamping=false;
+                sceneState.camera.position.copy(savedArchitecture.position);
+                sceneState.controls.target.copy(savedArchitecture.target);
+                sceneState.controls.update();
+                sceneState.controls.enableDamping=true;
+                savedArchitecture=null;
+            }
+            sceneState.controls.enabled=true;
+            sceneState.nodes.forEach(node=>{node.material.opacity=.97;});
+            selectModule(selectedId,false);
+        }
+        function openModuleDetail(moduleId) {
+            const module=moduleData.find(item=>item.id===moduleId);
+            if(!module || drilldownLocked) return;
+            selectModule(moduleId);
+            if(!module.detailViewId || !window.erpModuleView.begin(module.sceneId)) return;
+            drilldownLocked=true;
+            if(!sceneState || reducedMotion.matches){window.erpModuleView.show();return;}
+            stage.classList.add('is-drilling');
+            const {camera,controls}=sceneState;
+            savedArchitecture={position:camera.position.clone(),target:controls.target.clone()};
+            controls.enabled=false;
+            const node=sceneState.nodes.find(item=>item.data.id===moduleId);
+            const center=new THREE.Vector3();
+            node.moduleBlock.getWorldPosition(center);
+            const direction=camera.position.clone().sub(center).normalize();
+            center.addScaledVector(direction,.75);
+            entryPortal=new THREE.Group();
+            const ring=new THREE.Mesh(new THREE.TorusGeometry(.88,.055,12,80),
+                new THREE.MeshBasicMaterial({color:0x85d9ff}));
+            const halo=new THREE.Mesh(new THREE.TorusGeometry(.94,.11,12,80),
+                new THREE.MeshBasicMaterial({color:0x518bff,transparent:true,opacity:.24,depthWrite:false}));
+            entryPortal.add(ring,halo);
+            entryPortal.position.copy(center); entryPortal.lookAt(camera.position);
+            sceneState.scene.add(entryPortal);
+            drilldownAnimation={startedAt:performance.now(),duration:900,
+                fromCamera:camera.position.clone(),fromTarget:controls.target.clone(),
+                toCamera:center.clone().addScaledVector(direction,-.4),
+                toTarget:center.clone().addScaledVector(direction,-2),
+                navigate:()=>window.erpModuleView.show()};
+        }
+
         function createLabels() {
             labelsLayer.replaceChildren();
             moduleData.forEach((module) => {
@@ -998,12 +1682,12 @@
                 button.dataset.moduleId = module.id;
                 button.style.setProperty('--module-color', module.color);
                 button.setAttribute('aria-pressed', String(module.id === selectedId));
-                button.setAttribute('aria-label', `เลือกโมดูล ${module.name}`);
+                button.setAttribute('aria-label', module.detailViewId ? `เปิดรายละเอียดโมดูล ${module.name}` : `เลือกโมดูล ${module.name}`);
                 button.innerHTML = '<span class="erp-module-label__dot" aria-hidden="true"></span><span></span>';
                 button.lastElementChild.textContent = module.name;
                 button.addEventListener('click', (event) => {
                     event.stopPropagation();
-                    selectModule(module.id);
+                    openModuleDetail(module.id);
                 });
                 labelsLayer.appendChild(button);
             });
@@ -1185,7 +1869,7 @@
                 controls.minPolarAngle = 0.65;
                 controls.maxPolarAngle = 1.3;
                 controls.target.set(0, 0.55, 0);
-                controls.autoRotate = !reducedMotion.matches;
+                controls.autoRotate = false;
                 controls.autoRotateSpeed = 0.55;
 
                 scene.add(new THREE.HemisphereLight(0xffffff, 0x8aa3c7, 2.45));
@@ -1262,6 +1946,7 @@
             });
 
             canvas.addEventListener('pointermove', (event) => {
+                if (pointerDown && Math.hypot(event.clientX-pointerDown.x,event.clientY-pointerDown.y)>=7) pointerDown.dragged=true;
                 const nextHoveredId = getIntersectedModule(event);
                 if (nextHoveredId !== hoveredId) {
                     hoveredId = nextHoveredId;
@@ -1278,14 +1963,15 @@
 
             canvas.addEventListener('pointerup', (event) => {
                 if (!pointerDown) return;
-                const moved = Math.hypot(event.clientX - pointerDown.x, event.clientY - pointerDown.y);
+                const moved = pointerDown.dragged ? Infinity : Math.hypot(event.clientX - pointerDown.x, event.clientY - pointerDown.y);
                 pointerDown = null;
                 if (moved < 7) {
                     const moduleId = getIntersectedModule(event);
-                    if (moduleId) selectModule(moduleId);
+                    if (moduleId) openModuleDetail(moduleId);
                 }
             });
 
+            canvas.addEventListener('pointercancel', () => { pointerDown=null; });
             stage.addEventListener('wheel', (event) => event.stopPropagation(), { passive: false });
             stage.addEventListener('keydown', (event) => {
                 if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
@@ -1338,14 +2024,36 @@
             const elapsed = sceneState.clock.getElapsedTime();
             const delta = Math.min(sceneState.clock.getDelta(), 0.05);
 
-            sceneState.controls.autoRotate = !reducedMotion.matches;
-            sceneState.controls.update(delta);
+            if (drilldownAnimation) {
+                const rawProgress = Math.min((performance.now() - drilldownAnimation.startedAt) / drilldownAnimation.duration, 1);
+                const progress = rawProgress * rawProgress * (3 - 2 * rawProgress);
+                if(entryPortal) entryPortal.scale.setScalar(Math.min(1, rawProgress * 5));
+                sceneState.camera.position.lerpVectors(drilldownAnimation.fromCamera, drilldownAnimation.toCamera, progress);
+                sceneState.controls.target.lerpVectors(drilldownAnimation.fromTarget, drilldownAnimation.toTarget, progress);
+                sceneState.nodes.forEach((node) => {
+                    if (node.data.id !== selectedId) {
+                        node.targetScale = THREE.MathUtils.lerp(1, 0.72, progress);
+                        node.material.opacity = THREE.MathUtils.lerp(0.97, 0.16, progress);
+                        node.ringMaterial.opacity = THREE.MathUtils.lerp(0.44, 0.08, progress);
+                        node.connection.material.opacity = THREE.MathUtils.lerp(0.34, 0.06, progress);
+                    }
+                });
+                if (rawProgress >= 1) {
+                    const { navigate } = drilldownAnimation;
+                    drilldownAnimation = null;
+                    navigate();
+                }
+            }
+
+            sceneState.controls.autoRotate = false;
+            if (!drilldownLocked) sceneState.controls.update(delta);
+            else sceneState.camera.lookAt(sceneState.controls.target);
             sceneState.core.glowRing.rotation.z = reducedMotion.matches ? 0 : elapsed * 0.16;
 
             sceneState.nodes.forEach((node, nodeIndex) => {
                 const nextScale = THREE.MathUtils.lerp(node.group.scale.x, node.targetScale, 0.1);
                 node.group.scale.setScalar(nextScale);
-                node.group.position.y = reducedMotion.matches ? 0 : Math.sin(elapsed * 1.2 + nodeIndex) * 0.035;
+                node.group.position.y = 0;
                 node.connection.pulses.forEach((pulse) => {
                     const progress = reducedMotion.matches
                         ? pulse.userData.offset % 1
@@ -1378,31 +2086,342 @@
             sceneState?.clock.stop();
         }
 
-        function syncSceneWithSlide() {
-            if (Reveal.getCurrentSlide() === architectureSlide) {
-                startScene();
-            } else {
-                stopScene();
-            }
+
+        function selectFinancePart(id) { window.erpModuleView.select(id); }
+        function createFinanceLabels() {
+            financeLabelsLayer.replaceChildren();
+            getModulePartData().forEach(part=>{
+                const button=document.createElement('button');
+                button.type='button';button.className='finance-node-label';button.dataset.financePart=part.id;
+                button.style.setProperty('--finance-node-color',part.color);
+                button.setAttribute('aria-label','ดูหน้าที่ '+part.name);button.textContent=part.name;
+                button.addEventListener('click',()=>selectFinancePart(part.id));
+                financeLabelsLayer.append(button);
+            });
         }
 
-        const resizeObserver = new ResizeObserver(() => {
-            if (!sceneState) return;
-            resizeScene();
-            positionHtmlLabels();
-            sceneState.renderer.render(sceneState.scene, sceneState.camera);
-        });
-        resizeObserver.observe(stage);
-        reducedMotion.addEventListener('change', () => {
-            if (sceneState) sceneState.controls.autoRotate = !reducedMotion.matches;
-        });
+        function initFinanceScene() {
+            if(financeSceneState || financeStage.dataset.failed) return;
+            let renderer;
+            try {
+                const room=window.erpModuleView.current;
+                const financePartData=room.stations;
+                selectedFinancePartId=financePartData[0].id;
+                const scene=new THREE.Scene();
+                const camera=new THREE.PerspectiveCamera(36,1,.1,80);
+                camera.position.set(10,10.5,14);
+                renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'high-performance'});
+                renderer.setPixelRatio(Math.min(devicePixelRatio,1.6));
+                renderer.outputColorSpace=THREE.SRGBColorSpace;
+                renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.15;
+                renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+                renderer.domElement.setAttribute('aria-hidden','true');
+                financeStage.prepend(renderer.domElement);
+                const controls=new OrbitControls(camera,renderer.domElement);
+                controls.target.set(0,.6,0); controls.enableDamping=true;controls.enablePan=false;
+                controls.minDistance=12;controls.maxDistance=23;controls.minPolarAngle=.48;controls.maxPolarAngle=1.2;
+                controls.minAzimuthAngle=-.6;controls.maxAzimuthAngle=1.05;controls.update();
+                scene.add(new THREE.HemisphereLight(0xeaf3ff,0x879cb6,2));
+                const sun=new THREE.DirectionalLight(0xfff3df,3.5);sun.position.set(-4,11,7);sun.castShadow=true;
+                sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-8,right:8,top:8,bottom:-8,near:.5,far:30});
+                sun.shadow.normalBias=.035;sun.shadow.bias=-.0002;sun.shadow.radius=3;scene.add(sun);
+                const fill=new THREE.DirectionalLight(0x9ecaff,1.7);fill.position.set(6,5,-3);scene.add(fill);
+                const root=new THREE.Group();scene.add(root);
+                const materials={
+                    wall:new THREE.MeshStandardMaterial({color:room.theme.wall,roughness:.75}),
+                    floor:new THREE.MeshStandardMaterial({color:room.theme.floor,roughness:.32,metalness:.18}),
+                    oak:new THREE.MeshStandardMaterial({color:0xb39c7d,roughness:.55}),
+                    navy:new THREE.MeshStandardMaterial({color:0x30445f,roughness:.48}),
+                    metal:new THREE.MeshStandardMaterial({color:0xa5b5c5,metalness:.8,roughness:.23}),
+                    white:new THREE.MeshStandardMaterial({color:0xf6f3ec,roughness:.6}),
+                    paper:new THREE.MeshStandardMaterial({color:0xf9fafc,roughness:.85}),
+                    dark:new THREE.MeshStandardMaterial({color:0x253246,roughness:.4}),
+                    screen:new THREE.MeshStandardMaterial({color:0xa9def2,emissive:0x386586,emissiveIntensity:.4}),
+                    plant:new THREE.MeshStandardMaterial({color:0x477763,roughness:.8}),
+                    gold:new THREE.MeshStandardMaterial({color:0xd6b76d,metalness:.55,roughness:.3}),
+                    accent:new THREE.MeshStandardMaterial({color:room.theme.accent,emissive:room.theme.accent,emissiveIntensity:.22,roughness:.35})
+                };
+                const box=(parent,w,h,d,x,y,z,mat,r=.045)=>{
+                    const mesh=new THREE.Mesh(new RoundedBoxGeometry(w,h,d,2,Math.min(r,w/3,h/3,d/3)),mat);
+                    mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;parent.add(mesh);return mesh;
+                };
+                const cyl=(parent,r,h,x,y,z,mat)=>{
+                    const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,32),mat);
+                    mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;parent.add(mesh);return mesh;
+                };
+                box(root,10,.24,8,0,-.18,0,materials.floor);
+                box(root,10,3.3,.18,0,1.5,-4,materials.wall);
+                box(root,.18,3.3,8,-5,1.5,0,materials.wall);
+                box(root,10,.12,.13,0,3.19,-3.89,materials.white);
+                box(root,.13,.12,8,-4.89,3.19,0,materials.white);
+                // Fine floor seams and baseboards keep the room grounded at presentation distance.
+                const seam=new THREE.MeshStandardMaterial({color:0xa3b7c8,roughness:.7});
+                for(let x=-4;x<=4;x+=2)box(root,.012,.006,8,x,-.052,0,seam,0);
+                for(let z=-3;z<=3;z+=2)box(root,10,.006,.012,0,-.052,z,seam,0);
+                box(root,9.8,.12,.12,0,.03,-3.84,materials.metal);
+                const warm=new THREE.MeshBasicMaterial({color:0xffe3b4});
+                for(const x of [-3.4,0,3.4]){
+                    box(root,.65,.04,.25,x,2.98,-3.65,warm);
+                    const light=new THREE.PointLight(0xffd5a3,4,4,2);light.position.set(x,2.6,-3.1);root.add(light);
+                }
+                function plant(x,z,scale=1){
+                    const group=new THREE.Group();group.position.set(x,0,z);group.scale.setScalar(scale);root.add(group);
+                    cyl(group,.19,.45,0,.22,0,materials.white);
+                    cyl(group,.035,.65,0,.68,0,materials.oak);
+                    for(let i=0;i<7;i++){
+                        const leaf=new THREE.Mesh(new THREE.SphereGeometry(.16,8,6),materials.plant);
+                        leaf.scale.set(.75,2,.5);leaf.position.set(Math.sin(i*2.4)*.18,.85+(i%3)*.1,Math.cos(i*2.4)*.18);
+                        leaf.rotation.z=Math.sin(i)*.7;leaf.castShadow=true;group.add(leaf);
+                    }
+                }
+                plant(-4.25,2.8,1.15);plant(4.25,-3.1,1.3);plant(-.8,-3.2,1.1);
+                function papers(group,x,y,z){
+                    for(let i=0;i<5;i++)box(group,.42,.025,.53,x+(i%2)*.02,y+i*.027,z,materials.paper,.005);
+                    box(group,.28,.008,.035,x,y+.14,z,materials.navy,.001);
+                }
+                function desk(group){
+                    box(group,2.1,.14,1.15,0,1.05,0,materials.oak);
+                    box(group,.47,.97,1.02,-.7,.5,0,materials.white);
+                    box(group,.1,.97,.9,.86,.5,0,materials.metal);
+                    for(let i=0;i<3;i++){box(group,.49,.018,.028,-.7,.3+i*.26,.52,materials.metal);}
+                    box(group,.5,.04,.35,.2,1.16,-.12,materials.dark);
+                    box(group,.06,.3,.07,.2,1.32,-.22,materials.metal);
+                    box(group,.77,.52,.07,.2,1.65,-.25,materials.dark);
+                    box(group,.69,.43,.01,.2,1.65,-.207,materials.screen,.015);
+                    for(let i=0;i<3;i++)box(group,.4-i*.06,.017,.013,.1,1.75-i*.08,-.197,materials.white,.002);
+                    box(group,.53,.035,.19,.2,1.15,.24,materials.dark);
+                    papers(group,-.62,1.15,.04);
+                    box(group,.66,.14,.64,.05,.63,-.96,materials.navy);
+                    box(group,.65,.63,.13,.05,.97,-1.19,materials.navy);
+                    cyl(group,.045,.5,.05,.28,-.96,materials.metal);
+                    box(group,.68,.05,.07,.05,.07,-.96,materials.metal);
+                }
+                function panel(group,w=1.7,h=1.15){
+                    box(group,w,h,.12,0,1.55,0,materials.dark,.08);box(group,w-.14,h-.14,.02,0,1.55,.071,materials.screen,.03);
+                    for(let i=0;i<4;i++)box(group,(w-.34)*(1-i*.12),.025,.01,-.05,1.78-i*.18,.086,i===0?materials.accent:materials.white,.002);
+                }
+                function rack(group,binder=false){
+                    box(group,2.65,2.45,.7,0,1.22,0,materials.oak,.06);box(group,2.5,2.3,.05,0,1.22,.37,materials.dark,.01);
+                    for(let row=0;row<3;row++){box(group,2.5,.08,.74,0,.43+row*.75,.12,materials.oak,.02);for(let col=0;col<8;col++){
+                        const mat=binder?(col%3===0?materials.white:materials.navy):(col%2?materials.accent:materials.paper);
+                        box(group,.22,.48,.42,-1.02+col*.29,.73+row*.75,.34,mat,.018);
+                    }}
+                }
+                function pallet(group){
+                    for(let i=-1;i<=1;i++)box(group,1.55,.09,.12,0,.08,i*.34,materials.oak,.02);
+                    for(let row=0;row<2;row++)for(let col=0;col<3;col++)box(group,.45,.42,.52,-.5+col*.5,.35+row*.43,0,col%2?materials.paper:materials.accent,.035);
+                }
+                function conveyor(group){
+                    box(group,2.55,.13,.72,0,.78,0,materials.metal,.06);for(let x=-1;x<=1;x+=.33){const roller=cyl(group,.08,.65,x,.85,0,materials.dark);roller.rotation.x=Math.PI/2;}
+                    for(const x of [-1.05,1.05])box(group,.09,.72,.55,x,.36,0,materials.dark,.02);
+                }
+                function miniTruck(group){
+                    box(group,1.35,.72,.82,.25,.55,0,materials.white,.12);box(group,.62,.65,.82,-.72,.51,0,materials.accent,.12);
+                    for(const x of [-.65,.65])for(const z of [-.43,.43]){const wheel=cyl(group,.18,.12,x,.2,z,materials.dark);wheel.rotation.x=Math.PI/2;}
+                    box(group,.44,.23,.02,-.78,.66,.421,materials.screen,.03);
+                }
+                function stationObject(group,kind){
+                    let anchorHeight=2.25,width=2.2,depth=1.25;
+                    if(kind==='vault'){
+                        box(group,2.15,2.6,1.05,0,1.3,0,materials.metal,.13);box(group,1.7,2.12,.1,0,1.29,.55,materials.dark);
+                        for(let r=0;r<3;r++)for(let c=0;c<3;c++)box(group,.39,.19,.35,-.45+c*.44,.43+r*.39,.49,materials.gold,.035);
+                        const hinge=new THREE.Group();hinge.position.set(.91,1.3,.62);hinge.rotation.y=1.08;group.add(hinge);const door=cyl(hinge,1.02,.17,-.94,0,0,materials.metal);door.rotation.x=Math.PI/2;anchorHeight=3;
+                    }else if(['shelves','racks','records','vendor','bom'].includes(kind)){
+                        rack(group,kind==='shelves'||kind==='records'||kind==='vendor');anchorHeight=2.9;width=2.75;depth=.82;
+                        if(kind==='bom')box(group,1.45,.04,.62,0,2.62,.05,materials.paper,.01);
+                    }else if(['dashboard','comparison'].includes(kind)){
+                        panel(group,kind==='comparison'?2.65:2.2,1.5);box(group,2.4,.12,.72,0,.72,0,materials.oak);anchorHeight=2.55;width=2.75;
+                        if(kind==='comparison')for(let x=-.8;x<=.8;x+=.8)box(group,.62,.05,.72,x,.83,.02,materials.paper,.01);
+                    }else if(kind==='dock'){
+                        box(group,2.65,2.25,.18,0,1.18,-.36,materials.metal,.04);for(let y=.3;y<2.2;y+=.34)box(group,2.5,.04,.03,0,y,-.25,materials.dark,.01);pallet(group);anchorHeight=2.55;width=2.8;depth=1.55;
+                    }else if(kind==='scanner'){
+                        box(group,.12,2,.18,-.7,1,0,materials.dark);box(group,.12,2,.18,.7,1,0,materials.dark);box(group,1.52,.12,.18,0,1.95,0,materials.accent);pallet(group);anchorHeight=2.35;
+                    }else if(kind==='cart'){
+                        box(group,1.45,.08,.8,0,.65,0,materials.metal);for(const x of [-.63,.63])box(group,.05,.82,.05,x,.98,-.34,materials.dark);for(const x of [-.55,.55])for(const z of [-.3,.3])cyl(group,.12,.08,x,.15,z,materials.dark);pallet(group);
+                    }else if(kind==='conveyor'){
+                        conveyor(group);for(let x=-.72;x<=.72;x+=.72)box(group,.5,.42,.5,x,1.1,0,materials.paper,.04);anchorHeight=2.1;width=2.75;
+                    }else if(kind==='machine'){
+                        box(group,2.15,1.8,1.2,0,.9,0,materials.metal,.16);box(group,.95,.92,.08,0,1.05,.64,materials.dark,.05);box(group,.82,.78,.02,0,1.05,.686,materials.screen,.04);for(let i=0;i<3;i++)cyl(group,.08,.18,-.3+i*.3,.47,.66,i===1?materials.accent:materials.dark);anchorHeight=2.25;
+                    }else if(kind==='quality'){
+                        box(group,2.3,.14,1.15,0,.92,0,materials.white);for(const x of [-.78,.78])box(group,.1,.85,.9,x,.43,0,materials.metal);for(let x=-.65;x<=.65;x+=.65)cyl(group,.2,.25,x,1.11,0,x===0?materials.accent:materials.paper);panel(group,1.25,.75);anchorHeight=2.35;
+                    }else if(kind==='truck'){
+                        miniTruck(group);anchorHeight=2;width=2.2;depth=1.35;
+                    }else if(kind==='kiosk'){
+                        box(group,.75,1.75,.55,0,.88,0,materials.dark,.12);box(group,.57,.62,.02,0,1.25,.286,materials.screen,.05);cyl(group,.1,.08,0,.7,.32,materials.accent);anchorHeight=2.2;
+                    }else if(kind==='benefits'){
+                        for(const x of [-.62,.62]){box(group,.85,.22,.88,x,.42,0,materials.accent,.18);box(group,.85,.75,.18,x,.75,-.36,materials.accent,.16);}cyl(group,.43,.08,0,.48,.55,materials.oak);anchorHeight=1.7;
+                    }else if(kind==='training'){
+                        panel(group,2.15,1.25);for(let row=0;row<2;row++)for(let col=0;col<3;col++){box(group,.48,.1,.45,-.58+col*.58,.4,row*.7,materials.accent,.08);box(group,.48,.48,.1,-.58+col*.58,.64,row*.7-.18,materials.navy,.06);}anchorHeight=2.6;width=2.6;depth=1.7;
+                    }else{
+                        desk(group);
+                        if(kind==='trays')for(let i=0;i<3;i++){box(group,.51,.04,.62,-.65+i*.61,1.2,.47,materials.dark);papers(group,-.65+i*.61,1.25,.47);}
+                        if(['request','quote','invoice'].includes(kind))for(let i=0;i<2;i++)papers(group,-.55+i*1.05,1.22,.28);
+                        if(kind==='crm')for(let i=0;i<3;i++)cyl(group,.13,.04,-.42+i*.42,1.23,.3,i===1?materials.accent:materials.white);
+                    }
+                    return{anchorHeight,width,depth};
+                }
+                // Large room accents make each module recognisable before a station is selected.
+                if(room.id==='inventory'){for(const x of [-4.2,4.2]){const g=new THREE.Group();g.position.set(x,0,-1);root.add(g);rack(g);}}
+                if(room.id==='production'){for(let x=-4;x<4;x+=.55)box(root,.28,.018,.75,x,.01,3.35,x%1.1?materials.dark:materials.accent,.01);}
+                if(room.id==='sales'){const salesWall=new THREE.Group();salesWall.position.set(0,0,-3.65);root.add(salesWall);panel(salesWall,3.2,1.6);}
+                if(room.id==='hr'){plant(3.9,2.5,1.3);plant(-3.9,-2.8,1.15);}
+                if(room.id==='procurement')for(let x=-3;x<=3;x+=3)box(root,1.55,.9,.05,x,1.6,-3.82,materials.paper,.03);
+                const nodes=[];
+                financePartData.forEach(part=>{
+                    const group=new THREE.Group();group.position.set(...part.position);root.add(group);
+                    const accent=new THREE.MeshStandardMaterial({color:part.color,emissive:part.color,emissiveIntensity:.05,roughness:.35});
+                    const dims=stationObject(group,part.kind);
+                    const highlight=box(group,dims.width,.035,dims.depth,0,.035,.05,accent);
+                    const anchor=new THREE.Object3D();anchor.position.set(0,dims.anchorHeight,0);group.add(anchor);
+                    group.traverse(obj=>{if(obj.isMesh)obj.userData.modulePartId=part.id;});
+                    nodes.push({data:part,group,anchor,accent,highlight});
+                });
+                // Entrance portal is an architectural doorway, distinct from the ERP hub.
+                const portal=new THREE.Group();portal.position.set(-2,0,3.85);root.add(portal);
+                box(portal,1.95,.1,.65,0,.04,0,materials.navy);
+                box(portal,.12,2.8,.2,-.86,1.4,0,materials.metal);
+                box(portal,.12,2.8,.2,.86,1.4,0,materials.metal);
+                box(portal,1.84,.12,.2,0,2.78,0,materials.metal);
+                const portalMaterial=new THREE.MeshBasicMaterial({color:0x83dfff});
+                for(const x of [-.76,.76])box(portal,.045,2.58,.06,x,1.4,.12,portalMaterial);
+                box(portal,1.55,.045,.06,0,2.67,.12,portalMaterial);
+                const veil=new THREE.Mesh(new THREE.PlaneGeometry(1.48,2.5),new THREE.MeshBasicMaterial({color:0x5dafff,transparent:true,opacity:.16,side:THREE.DoubleSide,depthWrite:false}));
+                veil.position.set(0,1.38,0);portal.add(veil);
+                const entranceLight=new THREE.PointLight(0x67caff,6,5,2);entranceLight.position.set(-2,1.4,3.3);root.add(entranceLight);
+                const threads=[];
+                for(let i=0;i<3;i++){
+                    const ring=new THREE.Mesh(new THREE.TorusGeometry(.54+i*.11,.012,6,64),portalMaterial);
+                    ring.scale.y=1.6;ring.position.set(0,1.35,.035+i*.012);portal.add(ring);threads.push(ring);
+                }
+                // A compact lounge area adds a recognisable office scale.
+                cyl(root,.53,.08,1.05,.55,3.15,materials.oak);cyl(root,.065,.5,1.05,.25,3.15,materials.metal);
+                papers(root,1.05,.61,3.15);
+                financeSceneState={scene,camera,renderer,controls,root,nodes,threads,veil,roomId:room.id,clock:new THREE.Clock(),raycaster:new THREE.Raycaster(),pointer:new THREE.Vector2()};
+                createFinanceLabels();window.erpModuleView.select(selectedFinancePartId,false);bindFinanceInteractions();resizeFinanceScene();
+                financeStage.classList.add('is-ready');
+                renderer.domElement.addEventListener('webglcontextlost',event=>{
+                    event.preventDefault();stopFinanceScene();financeStage.classList.remove('is-ready');financeStage.dataset.failed='true';
+                    financeLabelsLayer.inert=true;
+                });
+                renderer.domElement.addEventListener('webglcontextrestored',()=>{
+                    delete financeStage.dataset.failed;financeStage.classList.add('is-ready');financeLabelsLayer.inert=false;
+                    if(window.erpModuleView.state==='open')startFinanceScene();
+                });
+            }catch(error){
+                renderer?.dispose();renderer?.domElement.remove();financeSceneState=null;
+                financeStage.dataset.failed='true';
+                console.warn('ERP module room uses 2D fallback:',error.message);
+            }
+        }
+        function getIntersectedFinancePart(event) {
+            if(!financeSceneState) return null;
+            const state=financeSceneState,rect=state.renderer.domElement.getBoundingClientRect();
+            state.pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);
+            state.raycaster.setFromCamera(state.pointer,state.camera);
+            return state.raycaster.intersectObjects(state.nodes.map(node=>node.group),true)[0]?.object.userData.modulePartId || null;
+        }
+        function bindFinanceInteractions() {
+            const canvas=financeSceneState.renderer.domElement;
+            let down=null,moved=false;
+            canvas.addEventListener('pointerdown',event=>{down={x:event.clientX,y:event.clientY};moved=false;});
+            canvas.addEventListener('pointermove',event=>{
+                if(down && Math.hypot(event.clientX-down.x,event.clientY-down.y)>7)moved=true;
+                canvas.style.cursor=getIntersectedFinancePart(event)?'pointer':'grab';
+            });
+            canvas.addEventListener('pointercancel',()=>{down=null;});
+            canvas.addEventListener('pointerup',event=>{
+                if(down && !moved){const id=getIntersectedFinancePart(event);if(id)selectFinancePart(id);}
+                down=null;
+            });
+        }
+        function resizeFinanceScene() {
+            if(!financeSceneState || !financeSlide.open)return;
+            const width=financeStage.clientWidth,height=financeStage.clientHeight;if(!width||!height)return;
+            const {camera,renderer}=financeSceneState;camera.aspect=width/height;
+            camera.fov=width/height<1?52:36;camera.updateProjectionMatrix();
+            renderer.setSize(width,height,false);
+        }
+        function positionFinanceLabels() {
+            const {camera,nodes}=financeSceneState,width=financeStage.clientWidth,height=financeStage.clientHeight;
+            const projected=new THREE.Vector3(),placed=[];
+            nodes.forEach(node=>{
+                node.anchor.getWorldPosition(projected);projected.project(camera);
+                const label=financeLabelsLayer.querySelector('[data-finance-part="'+node.data.id+'"]');
+                if(!label)return;
+                const half=label.offsetWidth/2+5;
+                let x=THREE.MathUtils.clamp((projected.x*.5+.5)*width,half,width-half);
+                let y=THREE.MathUtils.clamp((-projected.y*.5+.5)*height,25,height-25);
+                let attempts=0;
+                while(placed.some(other=>Math.abs(other.x-x)<half+other.half && Math.abs(other.y-y)<44) && attempts<6){y+=48;attempts++;}
+                if(y>height-24)y=Math.max(24,y-attempts*96);
+                placed.push({x,y,half});
+                label.style.left=x+'px';label.style.top=y+'px';
+            });
+        }
+        function renderFinanceFrame() {
+            if(!financeActive || !financeSceneState)return;
+            financeFrameId=requestAnimationFrame(renderFinanceFrame);
+            const state=financeSceneState,delta=Math.min(state.clock.getDelta(),.05),elapsed=state.clock.elapsedTime;
+            state.controls.update(delta);
+            state.veil.material.opacity=reducedMotion.matches?.16:.14+Math.sin(elapsed*1.5)*.025;
+            state.threads.forEach((ring,index)=>{ring.rotation.z=reducedMotion.matches?0:Math.sin(elapsed*.3+index)*.06;});
+            state.nodes.forEach(node=>{node.accent.emissiveIntensity=node.data.id===selectedFinancePartId?.65:.05;});
+            state.scene.updateMatrixWorld();positionFinanceLabels();state.renderer.render(state.scene,state.camera);
+        }
+        function startFinanceScene() {
+            if(financeStage.dataset.failed)return;
+            financeActive=true;initFinanceScene();if(!financeSceneState || financeFrameId)return;
+            resizeFinanceScene();financeSceneState.clock.start();renderFinanceFrame();
+        }
 
+        function stopFinanceScene() {
+            financeActive = false;
+            if (financeFrameId) {
+                cancelAnimationFrame(financeFrameId);
+                financeFrameId = null;
+            }
+            financeSceneState?.clock.stop();
+        }
+
+        function destroyFinanceScene() {
+            stopFinanceScene();
+            if(!financeSceneState)return;
+            const geometries=new Set(),materials=new Set();
+            financeSceneState.scene.traverse(object=>{
+                if(object.geometry)geometries.add(object.geometry);
+                const list=Array.isArray(object.material)?object.material:[object.material];
+                list.filter(Boolean).forEach(material=>materials.add(material));
+            });
+            geometries.forEach(geometry=>geometry.dispose());materials.forEach(material=>material.dispose());
+            financeSceneState.controls.dispose();financeSceneState.renderer.dispose();financeSceneState.renderer.domElement.remove();
+            financeSceneState=null;financeLabelsLayer.replaceChildren();financeStage.classList.remove('is-ready');
+        }
+
+
+        function syncSceneWithSlide() {
+            const state=window.erpModuleView.state;
+            if(document.hidden){stopScene();stopFinanceScene();return;}
+            if(Reveal.getCurrentSlide()?.id===architectureSlide.id && state==='closed')startScene();
+            else stopScene();
+            if(state==='open')startFinanceScene();else stopFinanceScene();
+        }
+        const resizeObserver=new ResizeObserver(()=>{if(active){resizeScene();}});
+        resizeObserver.observe(stage);
+        const financeResizeObserver=new ResizeObserver(()=>{if(financeActive)resizeFinanceScene();});
+        financeResizeObserver.observe(financeStage);
+        financeSlide.addEventListener('module-select',event=>{selectedFinancePartId=event.detail;});
+        financeSlide.addEventListener('module-open',syncSceneWithSlide);
+        financeSlide.addEventListener('module-exit',()=>{drilldownAnimation=null;stopScene();destroyFinanceScene();});
+        financeSlide.addEventListener('module-closed',()=>{resetArchitectureCamera();syncSceneWithSlide();});
+        document.addEventListener('visibilitychange',()=>{if(document.hidden && window.erpModuleView.state==='entering')window.erpModuleView.close(true);syncSceneWithSlide();});
+        reducedMotion.addEventListener('change',applyMotionPreference);
         if (Reveal.isReady()) {
             syncSceneWithSlide();
         } else {
             Reveal.on('ready', syncSceneWithSlide);
         }
         Reveal.on('slidechanged', syncSceneWithSlide);
+        window.setTimeout(syncSceneWithSlide, 350);
     </script>
 </body>
 </html>
